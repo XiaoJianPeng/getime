@@ -178,7 +178,7 @@ function addHashes(count) {
   for (var x = 0; x < count; x++) {
     string += '#'
   }
-  return string + " ";
+  return string + ' ';
 }
 
 module.exports = [replaceHeading, replaceParagraph, replacePre, replaceUl, replaceOl, replaceBold, replaceItalic, replaceBlockQuote]
