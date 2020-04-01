@@ -25,17 +25,6 @@
   ![](https://xiao-files.oss-cn-beijing.aliyuncs.com/picgo/微信图片_20200401102629.png)
 
   ```js
-  // 头信息配置
-  const header_config = {
-    'Content-Type': 'application/json',
-    Host: 'time.geekbang.org'
-  }
-  // 获取文章内容
-  const url1 = 'https://time.geekbang.org/serv/v1/article'
-  //头信息 Referer的url配置
-  const url2 = 'https://time.geekbang.org/column/article'
-  // 获取文章列表
-  const url3 = 'https://time.geekbang.org/serv/v1/column/articles'
   
   const Cookie = '_ga=GA1.2.599103124.1569156879; LF_ID=1584327865793-7884681-2455271; GCID=a0c61b9-f229637-f7f5b91-c7d4f37; GRID=a0c61b9-f229637-f7f5b91-c7d4f37; _gid=GA1.2.945582963.1585209103; GCESS=BAYERknztgwBAQUEAAAAAAkBAQMEL198XgcETA50AQEERuIUAAoEAAAAAAIEL198XgsCBAAIAQMEBAAvDQA-; gksskpitn=8ad5546a-c88e-45c4-929f-356a9c2abe7b; Hm_lvt_022f847c4e3acd44d4a2481d9187f1e6=1585215326,1585277185,1585277268; _gat=1; Hm_lpvt_022f847c4e3acd44d4a2481d9187f1e6=1585295036; '
   
