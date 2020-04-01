@@ -31,16 +31,16 @@ const url1 = 'https://time.geekbang.org/serv/v1/article'
 const url2 = 'https://time.geekbang.org/column/article'
 // 获取文章列表
 const url3 = 'https://time.geekbang.org/serv/v1/column/articles'
-const Cookie = '_ga=GA1.2.599103124.1569156879; LF_ID=1584327865793-7884681-2455271; GCID=a0c61b9-f229637-f7f5b91-c7d4f37; GRID=a0c61b9-f229637-f7f5b91-c7d4f37; gksskpitn=301ee4bc-60e6-4cdf-893a-0ea30d345016; _gid=GA1.2.395141861.1585707133; _gat=1; GCESS=BAwBAQUEAAAAAAoEAAAAAAgBAwEERuIUAAYERknztgsCBAAHBPXLh1IDBNk1hF4CBNk1hF4EBAAvDQAJAQE-; Hm_lvt_022f847c4e3acd44d4a2481d9187f1e6=1585721094,1585722806,1585722819,1585722843; Hm_lpvt_022f847c4e3acd44d4a2481d9187f1e6=1585722860'
+const Cookie = '_ga=GA1.2.599103124.1569156879; LF_ID=1584327865793-7884681-2455271; GCID=a0c61b9-f229637-f7f5b91-c7d4f37; GRID=a0c61b9-f229637-f7f5b91-c7d4f37; gksskpitn=301ee4bc-60e6-4cdf-893a-0ea30d345016; _gid=GA1.2.395141861.1585707133; GCESS=BAwBAQUEAAAAAAoEAAAAAAgBAwEERuIUAAYERknztgsCBAAHBPXLh1IDBNk1hF4CBNk1hF4EBAAvDQAJAQE-; Hm_lvt_022f847c4e3acd44d4a2481d9187f1e6=1585721094,1585722806,1585722819,1585722843; Hm_lpvt_022f847c4e3acd44d4a2481d9187f1e6=1585722860; _gat=1;'
 
-let serverId = 'SERVERID=1fa1f330efedec1559b3abbcb6e30f50|'
-const loginTime = '|1585721038;'
+let serverId = 'SERVERID=3431a294a18c59fc8f5805662e2bd51e|'
+const loginTime = '|1585730784;'
 
 /**
  * 获取文章列表所需的body
  */
 const list_data = {
-  cid: 48,
+  cid: 116,
   size: 100,
   prev: 0,
   order: "earliest",
@@ -48,7 +48,7 @@ const list_data = {
 }
 
 // 获取文章列表 所使用的id
-const id = '/181'
+const id = '/14252'
 
 //#endregion
 
@@ -91,13 +91,13 @@ const get_article_content = async (id, filename) => {
     header_config.Cookie = Cookie + SERVERID;
     let result = await post(url1, data, header_config)
     let content = result.data.data.article_content
-    let markdown = converter.convert(content);
     if (content) {
+      let markdown = converter.convert(content);
       save(markdown, filename)
+      log.info('文件保存成功')
     }
-    log.info('文件保存成功')
   } catch (error) {
-    log.error('异常信息：=========', error)
+    log.error('异常信息：=========' + filename, error)
   }
 
 }

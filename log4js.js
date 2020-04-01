@@ -75,7 +75,7 @@ log4js.configure({
     },
     dateFile: {
       type: 'dateFile',
-      filename: 'more-important-things.log',
+      filename: __dirname + '\\logs\\logs.log',
       pattern: 'yyyy-MM-dd-hh',
       compress: true
     },
@@ -94,9 +94,9 @@ log4js.configure({
 var log = log4js.getLogger('log_file');
 var logger1 = log4js.getLogger('log_date');
 
-log.info("this is a log4js test1111111111111!");
-logger1.info("this is a log4js test1111111111111!");
-console.log("test test!!");
+// log.info("this is a log4js test1111111111111!");
+// logger1.info("this is a log4js test1111111111111!");
+// console.log("test test!!");
 
 module.exports = {
   log
